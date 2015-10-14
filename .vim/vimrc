@@ -2,6 +2,7 @@ set nocompatible
 
 " Automatic formatting
 autocmd BufWritePre *.rb :%s/\s\+$//e
+autocmd FileType ruby compiler ruby
 autocmd BufWritePre *.html :%s/\s\+$//e
 autocmd BufWritePre *.html :%s/\s\+$//e
 au BufRead,BufNewFile Rakefile setf ruby
@@ -77,6 +78,12 @@ inoremap qq <esc>
 " create new vsplit, and switch to it
 noremap <leader>v <C-w>v
 noremap <leader>s <C-w>s
+
+" setting the height of the windows
+set winheight=30
+set winminheight=5
+nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " bindings for easy split nav
 nnoremap <C-h> <C-w>h
