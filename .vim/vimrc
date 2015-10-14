@@ -81,12 +81,6 @@ inoremap qq <esc>
 noremap <leader>v <C-w>v
 noremap <leader>s <C-w>s
 
-" setting the height of the windows
-set winheight=30
-set winminheight=5
-nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
-
 " bindings for easy split nav
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
