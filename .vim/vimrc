@@ -71,10 +71,6 @@ set virtualedit+=block
 " You'll see it a lot below as <leader>
 let mapleader = ","
 
-" So we don't have to press shift when we want to get into command mode.
-nnoremap ; :
-vnoremap ; :
-
 " So we don't have to reach for escape to leave insert move.
 inoremap qq <esc>
 
@@ -104,6 +100,7 @@ nnoremap <leader><leader> <c-^>
 noremap j gj
 noremap k gk
 
+" this is where the plug ins come from
 source ~/.vim/vim-plugins.vim
 
 " Finally the color scheme
