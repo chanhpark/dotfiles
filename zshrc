@@ -27,7 +27,7 @@ ZSH_THEME="af-magic"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+ DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -57,6 +57,8 @@ plugins=(git ruby atom bundler tmuxinator)
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
+
+PATH=$PATH:$HOME/.rbenv/bin
 
 #export PATH="/Users/chanpark/.rbenv/shims:/Users/chanpark/.rbenv/bin:/usr/local/Cellar/mysql55/5.5.44/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -91,11 +93,7 @@ alias ot="bundle exec ruby -I lib:test" #path of file after
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=/usr/local/Cellar/mysql55/5.5.44/bin:$PATH
-export PATH="$HOME/.rbenv/bin:$PATH"
 export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
-eval "$(rbenv init -)"
 
 # REE for LivingSocial (not much run on this anymore)
 export RUBY_HEAP_FREE_MIN=1024
@@ -125,4 +123,57 @@ function bumpNginx(){
  newpid=$(nginx_master_pid)
  echo "New PID:     "$newpid
  ps aux | grep memcached | grep "$newpid"
+}
+
+tall-kill(){
+  session_name=ls-sites
+  tmux select-window -t $1:1
+  tmux select-pane -t $session_name.16
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.15
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.14
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.13
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.12
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.11
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.10
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.9
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.8
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.7
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.6
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.5
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.4
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.3
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.2
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
+  tmux select-pane -t $session_name.1
+  tmux send-keys -t $session_name C-c
+  tmux send-keys -t $session_name "exit" C-m
 }

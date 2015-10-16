@@ -17,5 +17,3 @@ export PATH="/usr/local/bin:/usr/local/git/bin:/usr/local/sbin:/usr/bin:/bin:/us
    export EDITOR='vim'
  fi
 
-eval "$(rbenv init -)"
-
