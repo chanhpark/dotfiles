@@ -26,7 +26,6 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Airline
 " ===
 let g:airline_powerline_fonts = 1
-
 " ===
 
 " status bar plugin

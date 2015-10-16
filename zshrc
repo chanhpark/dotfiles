@@ -2,6 +2,7 @@
 export STEPFORD_LOCAL=true
 export ZSH=/Users/chanpark/.oh-my-zsh
 
+source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/.sh/functions.zsh
 
 # Set name of the theme to load.
@@ -53,7 +54,8 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-source $ZSH/oh-my-zsh.sh
+plugins=(git ruby atom bundler tmuxinator)
+
 # User configuration
 
 export PATH="/Users/chanpark/.rbenv/shims:/Users/chanpark/.rbenv/bin:/usr/local/Cellar/mysql55/5.5.44/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -126,4 +128,3 @@ function bumpNginx(){
  echo "New PID:     "$newpid
  ps aux | grep memcached | grep "$newpid"
 }
-
