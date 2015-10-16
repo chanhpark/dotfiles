@@ -87,6 +87,7 @@ alias rmrm="rake db:migrate && rake db:rollback && rake db:migrate"
 alias flush='echo 'flush_all' | nc localhost 11211'
 alias st="bundle exec foreman start"
 alias be="bundle exec"
+alias ot="bundle exec ruby -I lib:test" #path of file after
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
