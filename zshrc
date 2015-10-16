@@ -1,8 +1,7 @@
-# Path to your oh-my-zsh installation.
-export STEPFORD_LOCAL=true
-export ZSH=/Users/chanpark/.oh-my-zsh
+ZSH=$HOME/.oh-my-zsh
 
-source $ZSH/oh-my-zsh.sh
+# Path to your oh-my-zsh installation.
+source ~/dotfiles/.sh/exports.zsh
 source ~/dotfiles/.sh/functions.zsh
 
 # Set name of the theme to load.
@@ -57,11 +56,10 @@ plugins=(git)
 plugins=(git ruby atom bundler tmuxinator)
 
 # User configuration
-
-export PATH="/Users/chanpark/.rbenv/shims:/Users/chanpark/.rbenv/bin:/usr/local/Cellar/mysql55/5.5.44/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
+
+#export PATH="/Users/chanpark/.rbenv/shims:/Users/chanpark/.rbenv/bin:/usr/local/Cellar/mysql55/5.5.44/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

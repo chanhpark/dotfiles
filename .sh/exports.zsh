@@ -17,11 +17,5 @@ export PATH="/usr/local/bin:/usr/local/git/bin:/usr/local/sbin:/usr/bin:/bin:/us
    export EDITOR='vim'
  fi
 
- # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-SSH_ENV=$HOME/.ssh/environment
-
 eval "$(rbenv init -)"
 
-# ssh-add ~/.ssh/id_rsa

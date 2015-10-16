@@ -60,6 +60,9 @@ Plug 'kchmck/vim-coffee-script'
 " Mustache support
 Plug 'mustache/vim-mustache-handlebars'
 
+" def autocomplete plugin
+Plug 'tpope/vim-endwise'
+
 " A Vim plugin which shows a git diff in the gutter (sign column) and
 " stages/reverts hunks.
 Plug 'airblade/vim-gitgutter'
