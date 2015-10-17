@@ -125,55 +125,16 @@ function bumpNginx(){
  ps aux | grep memcached | grep "$newpid"
 }
 
-tall-kill(){
-  session_name=ls-sites
-  tmux select-window -t $1:1
-  tmux select-pane -t $session_name.16
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.15
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.14
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.13
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.12
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.11
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.10
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.9
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.8
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.7
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.6
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.5
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.4
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.3
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.2
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
-  tmux select-pane -t $session_name.1
-  tmux send-keys -t $session_name C-c
-  tmux send-keys -t $session_name "exit" C-m
+kill_all(){
+session_name=ls-sites
+pane_number=3
+count=`tmux list-windows | wc -l`
+  for (( i=1; i <= $count; ++i ))
+  do
+    tmux select-window -t $session_name:$i
+    tmux select-pane -t $session_name.$pane_number
+    tmux send-keys -t $session_name C-c
+  done
+
+tmux kill-session -t $session_name
 }
