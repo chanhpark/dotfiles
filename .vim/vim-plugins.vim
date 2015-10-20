@@ -12,7 +12,7 @@ Plug 'VundleVim/Vundle.vim'
 " a ton of color schemes
 " https://github.com/flazz/vim-colorshcemes#current-colorschemes
 Plug 'flazz/vim-colorschemes'
-Plug 'morhetz/gruvbox'
+Plug 'zeis/vim-kolor'
 
 " Fuzzy finder -- must have
 Plug 'kien/ctrlp.vim'
