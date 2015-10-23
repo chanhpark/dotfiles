@@ -1,4 +1,5 @@
 ZSH=$HOME/.oh-my-zsh
+export STEPFORD_LOCAL=true
 
 # Path to your oh-my-zsh installation.
 source ~/dotfiles/.sh/exports.zsh

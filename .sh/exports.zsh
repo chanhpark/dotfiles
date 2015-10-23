@@ -2,10 +2,11 @@
 # zshenv has already started PATH with rbenv so append only here
 #export PATH=$PATH~/bin:/usr/local/bin:/usr/local/sbin:~/bin
 
+export STEPFORD_LOCAL=true
+
 # User configuration
 export PATH="/usr/local/bin:/usr/local/git/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/Cellar/mysql55/5.5.44/bin:$PATH"
-
-# export MANPATH="/usr/local/man:$MANPATH"
+ #export MANPATH="/usr/local/man:$MANPATH"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
