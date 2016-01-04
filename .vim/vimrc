@@ -74,7 +74,7 @@ set virtualedit+=block
 let mapleader = ","
 
 " So we don't have to reach for escape to leave insert move.
-inoremap jf <esc>
+inoremap jj <esc>
 
 " create new vsplit, and switch to it
 noremap <leader>v <C-w>v
