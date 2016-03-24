@@ -139,3 +139,8 @@ count=`tmux list-windows | wc -l`
 
 tmux kill-session -t $session_name
 }
+
+copr() {
+    git fetch origin refs/pull/$1/head:pull-request-$1
+    git checkout pull-request-$1
+ }

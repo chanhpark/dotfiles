@@ -9,6 +9,10 @@ call plug#begin('~/.vim/plugged')
 " let Vundle manage itself
 Plug 'VundleVim/Vundle.vim'
 
+" js linter
+Plug 'jelera/vim-javascript-syntax'
+Plug 'Raimondi/delimitMate'
+
 " a ton of color schemes
 " https://github.com/flazz/vim-colorshcemes#current-colorschemes
 Plug 'flazz/vim-colorschemes'
