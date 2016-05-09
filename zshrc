@@ -4,6 +4,7 @@ export STEPFORD_LOCAL=true
 # Path to your oh-my-zsh installation.
 source ~/dotfiles/.sh/exports.zsh
 source ~/dotfiles/.sh/functions.zsh
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -127,7 +128,7 @@ function bumpNginx(){
 }
 
 kill_all(){
-session_name=ls-sites
+session_name=$1
 pane_number=3
 count=`tmux list-windows | wc -l`
   for (( i=1; i <= $count; ++i ))
