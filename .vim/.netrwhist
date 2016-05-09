@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
+<<<<<<< HEAD
 let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/chanpark/dotfiles'
 let g:netrw_dirhist_2='/Users/chanpark/ls-sites/deals'
@@ -7,3 +8,9 @@ let g:netrw_dirhist_4='/Users/chanpark/ls-sites/deals'
 let g:netrw_dirhist_5='/Users/chanpark/ls-sites/deals/config'
 let g:netrw_dirhist_6='/Users/chanpark/ls-sites/deals/log'
 let g:netrw_dirhist_7='/Users/chanpark/ls-sites/deals'
+=======
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/chanpark/dotfiles'
+let g:netrw_dirhist_2='/Users/cxp/dotfiles'
+let g:netrw_dirhist_3='/Users/cxp/dotfiles/.vim'
+>>>>>>> 19ab48388bf725dc8e02f04bdb00c1f11cbb31c7

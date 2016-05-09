@@ -1,5 +1,4 @@
 ZSH=$HOME/.oh-my-zsh
-export STEPFORD_LOCAL=true
 
 # Path to your oh-my-zsh installation.
 source ~/dotfiles/.sh/exports.zsh
@@ -10,7 +9,7 @@ source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.z
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="af-magic"
+ZSH_THEME="chan"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -55,15 +54,10 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-plugins=(git ruby atom bundler tmuxinator)
+plugins=(git ruby bundler tmuxinator)
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
-
-PATH=$PATH:$HOME/.rbenv/bin
-
-#export PATH="/Users/chanpark/.rbenv/shims:/Users/chanpark/.rbenv/bin:/usr/local/Cellar/mysql55/5.5.44/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -96,36 +90,6 @@ alias ot="bundle exec ruby -I lib:test" #path of file after
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
-
-# REE for LivingSocial (not much run on this anymore)
-export RUBY_HEAP_FREE_MIN=1024
-export RUBY_HEAP_MIN_SLOTS=4000000
-export RUBY_HEAP_SLOTS_INCREMENT=250000
-export RUBY_GC_MALLOC_LIMIT=500000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-
-# for 2.1.2
-export RUBY_GC_HEAP_INIT_SLOTS=600000
-export RUBY_GC_HEAP_FREE_SLOTS=600000
-export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
-export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
-export RUBY_GC_MALLOC_LIMIT=64000000
-export RUBY_GC_OLDMALLOC_LIMIT=64000000
-
-nginx_master_pid(){
- ps aux|grep nginx | grep master | awk '{ print $2 }'
-}
-function bumpNginx(){
- pid=$(nginx_master_pid)
- echo "Current PID: "$pid
- kill $pid
- sleep 2
- nginx
- sleep 2
- newpid=$(nginx_master_pid)
- echo "New PID:     "$newpid
- ps aux | grep memcached | grep "$newpid"
-}
 
 kill_all(){
 session_name=$1
