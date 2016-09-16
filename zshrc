@@ -9,7 +9,7 @@ source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.z
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="chan"
+ZSH_THEME="af-magic"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias rmrm="rake db:migrate && rake db:rollback && rake db:migrate"
 alias flush='echo 'flush_all' | nc localhost 11211'
-alias st="bundle exec foreman start"
+alias st="STEPFORD_LOCAL=1 bundle exec foreman start"
 alias be="bundle exec"
 alias ot="bundle exec ruby -I lib:test" #path of file after
 # alias zshconfig="mate ~/.zshrc"
