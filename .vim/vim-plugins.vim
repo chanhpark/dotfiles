@@ -6,6 +6,12 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+" vim easy commits
+Plug 'rhysd/committia.vim'
+
+" vim-tmux navigator 
+Plug 'christoomey/vim-tmux-navigator'
+
 " let Vundle manage itself
 Plug 'VundleVim/Vundle.vim'
 
