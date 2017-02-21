@@ -10,6 +10,7 @@ source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.z
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="agnoster"
+POWERLEVEL9K_MODE='awesome-patched'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -29,7 +30,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
- DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
