@@ -9,22 +9,18 @@ call plug#begin('~/.vim/plugged')
 " vim easy commits
 Plug 'rhysd/committia.vim'
 
-" vim-tmux navigator 
+" vim-tmux navigator
 Plug 'christoomey/vim-tmux-navigator'
 
 " let Vundle manage itself
 Plug 'VundleVim/Vundle.vim'
 
-" js linter
-Plug 'jelera/vim-javascript-syntax'
-Plug 'Raimondi/delimitMate'
-
 " a ton of color schemes
 " https://github.com/flazz/vim-colorshcemes#current-colorschemes
 Plug 'flazz/vim-colorschemes'
-Plug 'zeis/vim-kolor'
 
 " Fuzzy finder -- must have
+" leader + t
 Plug 'kien/ctrlp.vim'
 
 " Nerdtree
@@ -47,7 +43,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 
 " Vim plugin for intensely orgasmic commenting
-"Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 " dispatch.vim: asynchronous build and test dispatcher
 " http://www.vim.org/scripts/script.php?script_id=4504
@@ -96,3 +92,14 @@ map <leader>rs :call RunNearestSpec()<CR>
 map <leader>rl :call RunLastSpec()<CR>
 map <leader>ra :call RunAllSpecs()<CR>
 
+" NERDCommenter {{{
+let g:NERDCreateDefaultMappings = 0
+let g:NERDCustomDelimiters = {
+\ 'ruby': { 'left': '# ' },
+\ 'vim': { 'left': '" ' },
+\ 'scss': { 'left': '// ', 'right': '' },
+\ 'javascript': { 'left': '// ', 'right': '' }
+\ }
+xmap <Leader>cc <plug>NERDCommenterToggle
+nmap <Leader>cc <plug>NERDCommenterToggle
+" }}}
