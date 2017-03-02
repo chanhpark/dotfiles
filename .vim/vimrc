@@ -35,6 +35,7 @@ set backspace=indent,eol,start
 
 set wildmenu                "make tab completion behave like bash
 set wildmode=list:longest,full
+set modifiable
 
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
@@ -115,5 +116,5 @@ let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
 " Finally the color scheme
 set t_Co=256
 set background=dark
-colorscheme lucius
+colorscheme kolor
 
