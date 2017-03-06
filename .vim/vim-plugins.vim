@@ -114,3 +114,6 @@ nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gc :Gcommit<CR>
 " }}}
+" configure ag.vim to always search from your project root instead of
+" current working directory
+let g:ag_working_path_mode="r"
