@@ -1,10 +1,73 @@
-/*
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+special_echo "Install Homebrew"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Generates colored output.
-function special_echo {
-  echo -e '\E[0;32m'"$1\033[0m"
-}
+# BREW
+brew update
+
+# GIT
+brew install git
+brew install git-extras
+brew install hub
+# brew install wget
+brew tap homebrew/services
+
+# terminal
+# brew install iterm2
+# brew install tmux
+brew install vim --override-system-vim
+brew install reattach-to-user-namespace
+brew install the_silver_searcher
+
+# development
+# brew install rbenv ruby-build rbenv-default-gems rbenv-use
+brew install python
+brew install mysql
+
+# NODE
+#brew install node
+
+# Elixir
+# brew install elixir
+# brew install erlang
+
+# VIM / TMUX Status bar
+pip install powerline-status
+pip install psutil
+
+# WEECHAT
+# brew install weechat --with-aspell --with-curl --with-python --with-perl --with-ruby --with-lua --with-guile
+
+# special_echo "Install Oh-My-Zsh"
+# sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+# echo "Linking Custom Oh My Zsh themes "
+# rm -rf $ZSH_CUSTOM/themes
+# ln -s $DIR/oh-my-zsh/custom/themes $ZSH_CUSTOM/themes
+
+echo "Install Powerline fonts"
+~/powerline_fonts/install.sh
+
+echo "Link Powerline config files to homedirectory config folder"
+ln -s /usr/local/lib/python2.7/site-packages/powerline/config_files $HOME/.config/powerline
+
+# echo "Linking agignore file"
+# ln -s $DIR/agignore $HOME/.agignore
+
+echo "Linking irbrc file"
+ln -s $DIR/irbrc $HOME/.irbrc
+
+echo "Linking pryrc file"
+ln -s $DIR/pryrc $HOME/.pryrc
+
+echo "Linking pryrc file"
+ln -s $DIR/gemrc $HOME/.gemrc
+
+echo "Linking rbenv default-gems file file"
+ln -s $DIR/rbenv/default-gems $HOME/.rbenv/default-gems
+
+# echo "Linking weechat settings"
+# ln -sf $DIR/weechat/weechat.conf $HOME/.weechat/weechat.conf
+# ln -sf $DIR/weechat/buffers.conf $HOME/.weechat/buffers.conf
 
 special_echo "Setting up $HOME/.zshrc"
 echo "source $DIR/zshrc" >> $HOME/.zshrc
@@ -12,15 +75,14 @@ echo "source $DIR/zshrc" >> $HOME/.zshrc
 special_echo "Settting up $HOME/.tmux.conf"
 echo "tmux source-file $DIR/tmux.conf" > $HOME/.tmux.conf
 
+echo "Overwriting up $HOME/.gitconfig"
+echo -e "[include]\n  path = $DIR/_gitconfig" > $HOME/.gitconfig
+
 echo "Configuring global gitignore file"
 git config --global core.excludesfile $DIR/gitignore
 
-echo "Install Vundle"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
 echo "Setting $HOME/.vim to link to $DIR/_vim directory"
-ln -s $DIR/.vim $HOME/.vim
+ln -s $DIR/vim $HOME/.vim
 
-echo "Bundle vim plugins"
-vim +PluginInstall +qall
-*/
+#echo "Installing NVM for Node"
+#ruby -e "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | zsh)"

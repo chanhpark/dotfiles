@@ -4,6 +4,7 @@ set nocompatible
 autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufWritePre *.html :%s/\s\+$//e
 autocmd BufWritePre *.html :%s/\s\+$//e
+autocmd BufWritePre * %s/\s\+$//e
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
@@ -34,6 +35,7 @@ set backspace=indent,eol,start
 
 set wildmenu                "make tab completion behave like bash
 set wildmode=list:longest,full
+set modifiable
 
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
@@ -71,7 +73,7 @@ set virtualedit+=block
 
 " leader is a key that allows you to have your own 'namespace" of keybindings.
 " You'll see it a lot below as <leader>
-let mapleader = ","
+let mapleader = "\<Space>"
 
 " So we don't have to reach for escape to leave insert move.
 inoremap jj <esc>
@@ -91,7 +93,8 @@ nnoremap / /\v
 vnoremap / /\v
 
 " clear match highlighting
-noremap <leader><space> :noh<cr>:call clearmatches()<cr>
+nnoremap <esc> :noh<return><esc><cr>:call clearmatches()<cr>
+" noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 
 " Quick buffer switching - like cmd-tabbing
 nnoremap <leader><leader> <c-^>
@@ -113,4 +116,5 @@ let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
 " Finally the color scheme
 set t_Co=256
 set background=dark
-colorscheme kolor 
+colorscheme kolor
+

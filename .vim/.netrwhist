@@ -1,6 +1,6 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/chanpark/dotfiles'
-let g:netrw_dirhist_2='/Users/cxp/dotfiles'
-let g:netrw_dirhist_3='/Users/cxp/dotfiles/.vim'
-let g:netrw_dirhist_4='/Users/chanpark/dotfiles'
+let g:netrw_dirhist_1='/Users/chanpark/Decisiv/pricing/app'
+let g:netrw_dirhist_2='/Users/chanpark/Decisiv/pricing/config'
+let g:netrw_dirhist_3='/Users/chanpark/Decisiv/pricing'
+let g:netrw_dirhist_4='/Users/chanpark/Decisiv/portal'
